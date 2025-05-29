@@ -25,6 +25,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="aliments"
+                options={{
+                    title: 'Alimentos e bebidas',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
