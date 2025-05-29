@@ -29,18 +29,18 @@ export default function FavoriteScreen() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '100%',
+        height: '93%',
         alignItems: 'center',
         textAlign: 'center',
         display: 'flex',
-        backgroundColor: '#Ffffff',
+        backgroundColor: '#22222',
     },
 
     header: {
         width: '100%',
-        height: '10%',
+        height: '11%',
         paddingHorizontal: 20,
-        paddingTop: 10,
+        paddingTop: 30,
         top: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
