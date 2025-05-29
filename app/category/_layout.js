@@ -5,15 +5,26 @@ export default function CategoryLayout() {
         <Stack
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: '#000',
+                    backgroundColor: '#ff0f35',
                 },
-                headerShown: false,
-                headerTintColor: '#39FF14',
+                headerTintColor: '#ffff',
                 headerTitleAlign: 'center',
             }}
         >
-            <Stack.Screen name="index" options={{ title: 'Categorias' }} />
-            <Stack.Screen name="detalhe" options={{ title: 'Detalhe da Categoria' }} />
+            <Stack.Screen
+                name="category"
+                options={{
+                    title: 'Categorias',
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="agro"
+                options={{
+                    title: 'Agro, indústria e comércio',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }

@@ -2,62 +2,65 @@ import React, { useState } from "react";
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
     const [search, setSearch] = useState("");
 
     const categorias = [
-        { id: '1', nome: 'Agro, indústria e comércio' },
-        { id: '2', nome: 'Alimentos e bebidas' },
-        { id: '3', nome: 'Artes e Artesanato' },
-        { id: '4', nome: 'Artigos de festa' },
-        { id: '5', nome: 'Áudio e vídeo' },
-        { id: '6', nome: 'Automotivo' },
-        { id: '7', nome: 'Bebês e higiene infantil' },
-        { id: '8', nome: 'Beleza e perfumaria' },
-        { id: '9', nome: 'Bem estar sexual' },
-        { id: '10', nome: 'Brinquedos' },
-        { id: '11', nome: 'Cabelos' },
-        { id: '12', nome: 'Calçados' },
-        { id: '13', nome: 'Cama, mesa e banho' },
-        { id: '14', nome: 'Celulares e smartphones' },
-        { id: '15', nome: 'Climatização' },
-        { id: '16', nome: 'Computadores e Informática' },
-        { id: '17', nome: 'Consoles e Games' },
-        { id: '18', nome: 'Construção e ferramentas' },
-        { id: '19', nome: 'Decoração' },
-        { id: '20', nome: 'Eletrodomésticos' },
-        { id: '21', nome: 'Esporte e lazer' },
-        { id: '22', nome: 'Gift card' },
-        { id: '23', nome: 'Instrumentos musicais' },
-        { id: '24', nome: 'Limpeza' },
-        { id: '25', nome: 'Livros' },
-        { id: '26', nome: 'Malas, mochilas e acessórios' },
-        { id: '27', nome: 'Moda' },
-        { id: '28', nome: 'Móveis' },
-        { id: '29', nome: 'Música, filmes e séries' },
-        { id: '30', nome: 'Papelaria' },
-        { id: '31', nome: 'Pet shop' },
-        { id: '32', nome: 'Relógios e joias' },
-        { id: '33', nome: 'Saúde e bem estar' },
-        { id: '34', nome: 'Seguros' },
-        { id: '35', nome: 'Serviços' },
-        { id: '36', nome: 'Suplementos e vitaminas' },
-        { id: '37', nome: 'Tables' },
-        { id: '38', nome: 'Telefonia' },
-        { id: '39', nome: 'Utilidades domésticas' },
-        { id: '40', nome: 'Vale presente' },
+        { id: '1', nome: 'Agro, indústria e comércio', rota: 'agro' },
+        { id: '2', nome: 'Alimentos e bebidas', rota: 'Alimentos' },
+        { id: '3', nome: 'Artes e Artesanato', rota: 'Artes' },
+        { id: '4', nome: 'Artigos de festa', rota: 'Festa' },
+        { id: '5', nome: 'Áudio e vídeo', rota: 'AudioVideo' },
+        { id: '6', nome: 'Automotivo', rota: 'Automotivo' },
+        { id: '7', nome: 'Bebês e higiene infantil', rota: 'Bebes' },
+        { id: '8', nome: 'Beleza e perfumaria', rota: 'Beleza' },
+        { id: '9', nome: 'Bem estar sexual', rota: 'BemEstarSexual' },
+        { id: '10', nome: 'Brinquedos', rota: 'Brinquedos' },
+        { id: '11', nome: 'Cabelos', rota: 'Cabelos' },
+        { id: '12', nome: 'Calçados', rota: 'Calcados' },
+        { id: '13', nome: 'Cama, mesa e banho', rota: 'CamaMesaBanho' },
+        { id: '14', nome: 'Celulares e smartphones', rota: 'Celulares' },
+        { id: '15', nome: 'Climatização', rota: 'Climatizacao' },
+        { id: '16', nome: 'Computadores e Informática', rota: 'Informatica' },
+        { id: '17', nome: 'Consoles e Games', rota: 'Games' },
+        { id: '18', nome: 'Construção e ferramentas', rota: 'Construcao' },
+        { id: '19', nome: 'Decoração', rota: 'Decoracao' },
+        { id: '20', nome: 'Eletrodomésticos', rota: 'Eletrodomesticos' },
+        { id: '21', nome: 'Esporte e lazer', rota: 'Esporte' },
+        { id: '22', nome: 'Gift card', rota: 'GiftCard' },
+        { id: '23', nome: 'Instrumentos musicais', rota: 'Instrumentos' },
+        { id: '24', nome: 'Limpeza', rota: 'Limpeza' },
+        { id: '25', nome: 'Livros', rota: 'Livros' },
+        { id: '26', nome: 'Malas, mochilas e acessórios', rota: 'Malas' },
+        { id: '27', nome: 'Moda', rota: 'Moda' },
+        { id: '28', nome: 'Móveis', rota: 'Moveis' },
+        { id: '29', nome: 'Música, filmes e séries', rota: 'MusicaFilmes' },
+        { id: '30', nome: 'Papelaria', rota: 'Papelaria' },
+        { id: '31', nome: 'Pet shop', rota: 'PetShop' },
+        { id: '32', nome: 'Relógios e joias', rota: 'Relogios' },
+        { id: '33', nome: 'Saúde e bem estar', rota: 'Saude' },
+        { id: '34', nome: 'Seguros', rota: 'Seguros' },
+        { id: '35', nome: 'Serviços', rota: 'Servicos' },
+        { id: '36', nome: 'Suplementos e vitaminas', rota: 'Suplementos' },
+        { id: '37', nome: 'Tables', rota: 'Tables' },
+        { id: '38', nome: 'Telefonia', rota: 'Telefonia' },
+        { id: '39', nome: 'Utilidades domésticas', rota: 'Utilidades' },
+        { id: '40', nome: 'Vale presente', rota: 'ValePresente' },
     ];
 
     const categoriasFiltradas = categorias.filter(categoria =>
         categoria.nome.toLowerCase().includes(search.toLowerCase())
     );
 
+    const navigation = useNavigation();
+
     const renderItem = ({ item }) => (
         <TouchableOpacity
             style={styles.item}
-            onPress={() => alert(`Categoria: ${item.nome}`)}
-        >
+            onPress={() => navigation.navigate(item.rota, { categoria: item })}
+        > 
             <Text style={styles.text}>{item.nome}</Text>
             <MaterialIcons name="arrow-forward-ios" size={16} color="black" />
         </TouchableOpacity>

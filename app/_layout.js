@@ -19,9 +19,7 @@ export default function Layout() {
                     marginBottom: 5,
                 },
                 headerTitleAlign: 'center',
-                headerStyle: {
-                    backgroundColor: '#000000',
-                },
+
                 headerTintColor: '#39FF14',
             }}
         >
