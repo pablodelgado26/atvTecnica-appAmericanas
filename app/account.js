@@ -1,6 +1,7 @@
 import React from "react"
 import { View, Text, StyleSheet, Image, Pressable, ImageBackgroundBase } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import erasedLogo from "../assets/erasedLogo.png"
 
 export default function FavoriteScreen() {
     return (
@@ -9,9 +10,7 @@ export default function FavoriteScreen() {
 
             <View>
                 <Image 
-                    source={{
-                        uri: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_americanas.png'
-                    }}
+                    source={erasedLogo} 
                     style={{ width: 195, height: 100, marginTop: 100 }}
                 />
             </View>
@@ -94,13 +93,9 @@ export default function FavoriteScreen() {
 
                 <View style={styles.developer}>
                     <Image
-                    source={{
-                    uri: 'https://fontmeme.com/temporary/re_6254_userlmn_1093079cbaf8.png'
-                    }}
                     style={{ width: 30, height: 30}}
                     />
-                    <Text>Desenvolvido por Kobe</Text>
-                    <Text>v11.369.0</Text>
+                    <Text>Desenvolvido por: Miguel, Pablo, Vinícuis Pereira e Vinícius Rocha</Text>
                 </View>
 
         </View>
@@ -115,7 +110,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         display: 'flex',
-        backgroundColor: '#fff'
+        backgroundColor: '#22222'
     },
 
     text: {
@@ -127,7 +122,8 @@ const styles = StyleSheet.create({
     },
 
     pressable: {
-        paddingTop: 35 ,
+        paddingTop: 35,
+        margin: 5
     },
 
     pressableTerms: {
@@ -136,11 +132,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        padding: 15
+        padding: 10
     },
     
     developer: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: 110,
+        height: 70,
+        textAlign: 'center'
     }
 })  
