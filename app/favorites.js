@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         display: 'flex',
-        backgroundColor: '#Ffffff',
+        backgroundColor: '#22222',
     },
 
     header: {
         width: '100%',
-        height: '10%',
+        height: '11%',
         paddingHorizontal: 20,
-        paddingTop: 10,
+        paddingTop: 30,
         top: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
