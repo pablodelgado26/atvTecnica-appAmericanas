@@ -32,6 +32,27 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="art"
+                options={{
+                    title: 'Artes e Artesanato',
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="party"
+                options={{
+                    title: 'Artigos de festa',
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="audio"
+                options={{
+                    title: 'Áudio e vídeo',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
