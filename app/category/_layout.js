@@ -46,6 +46,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="audio"
+                options={{
+                    title: 'Áudio e vídeo',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
