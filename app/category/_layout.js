@@ -60,6 +60,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="babies"
+                options={{
+                    title: 'Bebês e higiene infantil',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
