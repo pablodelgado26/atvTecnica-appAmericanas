@@ -13,7 +13,7 @@ export default function Home() {
         { id: '3', nome: 'Artes e Artesanato', rota: 'art' },
         { id: '4', nome: 'Artigos de festa', rota: 'party' },
         { id: '5', nome: 'Áudio e vídeo', rota: 'audio' },
-        { id: '6', nome: 'Automotivo', rota: 'Automotivo' },
+        { id: '6', nome: 'Automotivo', rota: 'automotive' },
         { id: '7', nome: 'Bebês e higiene infantil', rota: 'Bebes' },
         { id: '8', nome: 'Beleza e perfumaria', rota: 'Beleza' },
         { id: '9', nome: 'Bem estar sexual', rota: 'BemEstarSexual' },

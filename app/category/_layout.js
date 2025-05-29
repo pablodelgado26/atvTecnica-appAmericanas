@@ -53,6 +53,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="automotive"
+                options={{
+                    title: 'Automotivo',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
