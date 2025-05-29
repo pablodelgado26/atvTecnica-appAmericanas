@@ -13,14 +13,14 @@ export default function FavoriteScreen() {
             </View>
 
         <View style={styles.content}>
-            <div style={{ backgroundColor: '#FF5555', borderRadius: 40, width: 70, height: 70 , alignItems: 'center', justifyContent: 'center' , display: 'flex'}}>
-             <Ionicons name="heart-outline" size={42}  color="#FFF" justifyContent='center' paddingTop={40} />
-            </div>
+            <View style={{ backgroundColor: '#FF5555', borderRadius: 40, width: 70, height: 70 , alignItems: 'center', justifyContent: 'center' , display: 'flex'}}>
+             <Ionicons name="heart-outline" size={42}  color="#FFF" justifyContent='center' />
+            </View>
 
-            <div style={{ width: 360, paddingTop: 30, height: 60 }}>
-                <Text style={styles.text}>Nenhum produto adicionado <br></br></Text>
+            <View style={{ width: 320, paddingTop: 30, height: 100, textAlign: 'center' }}>
+                <Text style={styles.text}>Nenhum produto adicionado</Text>
                 <Text style={styles.subtext}>Você ainda não salvou nenhum produto na sua lista de favoritos.</Text>
-                </div>
+                </View>
             </View>
         </View>
     )
@@ -33,13 +33,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         display: 'flex',
-        backgroundColor: '#F8f8ff',
+        backgroundColor: '#Ffffff',
     },
 
     header: {
         width: '100%',
-        height: 60,
+        height: '10%',
         paddingHorizontal: 20,
+        paddingTop: 10,
         top: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -60,9 +61,16 @@ const styles = StyleSheet.create({
         color: "#EE0000",
         bottom: 8,
         fontWeight: 'bold',
+        textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'center'
     },
 
     subtext: {
         textAlign: 'center',
+        width: '100%',
+        justifyContent: 'center',
+        display: 'flex',
+        alignItems: 'center'
     }
 })
