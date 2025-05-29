@@ -1,6 +1,7 @@
 import { Tabs, Stack } from "expo-router";
 import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 export default function Layout() {
     return (
@@ -8,19 +9,10 @@ export default function Layout() {
             screenOptions={{
                 tabBarActiveTintColor: "#ff0f35",
                 tabBarInactiveTintColor: "#ccc",
-                tabBarStyle: {
-                    backgroundColor: "#ffffffff",
-                    borderTopWidth: 1,
-                    borderTopColor: "#39FF14",
-                    height: 80,
-                },
                 tabBarLabelStyle: {
                     fontSize: 12,
                     marginBottom: 5,
                 },
-                headerTitleAlign: 'center',
-
-                headerTintColor: '#39FF14',
             }}
         >
             <Tabs.Screen
@@ -40,6 +32,16 @@ export default function Layout() {
                     tabBarLabel: "Categorias", // Adiciona o nome abaixo do ícone
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="menu" size={size} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="basket"
+                options={{
+                    headerShown: false,
+                    tabBarLabel: "Cesta", // Adiciona o nome abaixo do ícone
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesome5 name="shopping-basket" size={size} color={color} />
                     ),
                 }}
             />
