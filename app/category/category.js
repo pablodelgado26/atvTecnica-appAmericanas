@@ -11,7 +11,7 @@ export default function Home() {
         { id: '1', nome: 'Agro, indústria e comércio', rota: 'agro' },
         { id: '2', nome: 'Alimentos e bebidas', rota: 'aliments' },
         { id: '3', nome: 'Artes e Artesanato', rota: 'art' },
-        { id: '4', nome: 'Artigos de festa', rota: 'Festa' },
+        { id: '4', nome: 'Artigos de festa', rota: 'party' },
         { id: '5', nome: 'Áudio e vídeo', rota: 'AudioVideo' },
         { id: '6', nome: 'Automotivo', rota: 'Automotivo' },
         { id: '7', nome: 'Bebês e higiene infantil', rota: 'Bebes' },

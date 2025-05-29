@@ -39,6 +39,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="party"
+                options={{
+                    title: 'Artigos de festa',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }
