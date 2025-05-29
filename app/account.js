@@ -95,7 +95,7 @@ export default function FavoriteScreen() {
                 <View style={styles.developer}>
                     <Image
                     source={{
-                    uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQv3-uODK_Aobp3QHrfu_BLzAJJEwcLdP6paLXdO1Um_MhF0ekb'
+                    uri: 'https://fontmeme.com/temporary/re_6254_userlmn_1093079cbaf8.png'
                     }}
                     style={{ width: 30, height: 30}}
                     />
