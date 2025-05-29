@@ -516,7 +516,7 @@ const styles = StyleSheet.create({
     },
     searchBarContainer: {
         backgroundColor: '#E60014',
-        paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 10,
+        paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 10,  // Espaço superior adaptado ao sistema
         paddingBottom: 16,
         paddingHorizontal: '5%',
 
