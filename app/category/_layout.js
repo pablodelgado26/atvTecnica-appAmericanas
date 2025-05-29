@@ -32,6 +32,13 @@ export default function CategoryLayout() {
                     headerShown: true,
                 }}
             />
+            <Stack.Screen
+                name="art"
+                options={{
+                    title: 'Artes e Artesanato',
+                    headerShown: true,
+                }}
+            />
         </Stack>
     );
 }

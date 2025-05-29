@@ -10,7 +10,7 @@ export default function Home() {
     const categorias = [
         { id: '1', nome: 'Agro, indústria e comércio', rota: 'agro' },
         { id: '2', nome: 'Alimentos e bebidas', rota: 'aliments' },
-        { id: '3', nome: 'Artes e Artesanato', rota: 'Artes' },
+        { id: '3', nome: 'Artes e Artesanato', rota: 'art' },
         { id: '4', nome: 'Artigos de festa', rota: 'Festa' },
         { id: '5', nome: 'Áudio e vídeo', rota: 'AudioVideo' },
         { id: '6', nome: 'Automotivo', rota: 'Automotivo' },
