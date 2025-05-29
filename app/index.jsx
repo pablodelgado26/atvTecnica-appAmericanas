@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { View, TextInput, StyleSheet, SafeAreaView, Image, Dimensions, FlatList, TouchableOpacity, Text } from 'react-native';
+import { View, TextInput, StyleSheet, SafeAreaView, Image, Dimensions, FlatList, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Home() {
+     
     const [activeIndex, setActiveIndex] = useState(0);
     const flatListRef = useRef(null);
     
@@ -57,48 +58,143 @@ export default function Home() {
                     />
                 </View>
             </View>
-            <View style={{ height: 10 }} />
-            <View style={styles.imageContainer}>
-                <Image
-                    source={{
-                        uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fba16a37e-3831-46a9-aab8-61bffc456e98___9dd59faff35da8605690f1e9f6917bf0.png&w=1440&q=75',
-                    }}
-                    style={styles.bannerImage}
-                    resizeMode="cover"
-                />
-            </View>
             
-            {/* Início do Carrossel */}
-            <View style={styles.carouselContainer}>
-                <Text style={styles.carouselTitle}>Ofertas do dia</Text>
-                <FlatList
-                    ref={flatListRef}
-                    data={carouselImages}
-                    renderItem={renderCarouselItem}
-                    keyExtractor={(item) => item.id}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    pagingEnabled={false}
-                    decelerationRate="fast"
-                    snapToInterval={Dimensions.get('window').width * 0.8 + 10}
-                    snapToAlignment="center"
-                    onScroll={handleScroll}
-                    contentContainerStyle={styles.carouselList}
-                />
-                <View style={styles.paginationContainer}>
-                    {carouselImages.map((_, index) => (
-                        <View
-                            key={index}
-                            style={[
-                                styles.paginationDot,
-                                index === activeIndex ? styles.paginationDotActive : null
-                            ]}
-                        />
-                    ))}
+            <ScrollView 
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.scrollViewContent}
+            >
+                <View style={{ height: 10 }} />
+                <View style={styles.imageContainer}>
+                    <Image
+                        source={{
+                            uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fba16a37e-3831-46a9-aab8-61bffc456e98___9dd59faff35da8605690f1e9f6917bf0.png&w=1440&q=75',
+                        }}
+                        style={{
+                            width: Dimensions.get('window').width * 0.99,
+                            height: Dimensions.get('window').width * 0.38,
+                            borderRadius: 0,
+                        }}
+                        resizeMode="cover"
+                    />
                 </View>
-            </View>
-            {/* Fim do Carrossel */}
-           
+                
+                {/* Início do Carrossel */}
+                <View style={styles.carouselContainer}>
+                    <Text style={styles.carouselTitle}></Text>
+                    <FlatList
+                        ref={flatListRef}
+                        data={carouselImages}
+                        renderItem={renderCarouselItem}
+                        keyExtractor={(item) => item.id}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        pagingEnabled={false}
+                        decelerationRate="fast"
+                        snapToInterval={Dimensions.get('window').width * 0.98 + 10}
+                        snapToAlignment="center"
+                        onScroll={handleScroll}
+                        contentContainerStyle={styles.carouselList}
+                        nestedScrollEnabled={true}
+                    />
+                    <View style={styles.paginationContainer}>
+                        {carouselImages.map((_, index) => (
+                            <View
+                                key={index}
+                                style={[
+                                    styles.paginationDot,
+                                    index === activeIndex ? styles.paginationDotActive : null
+                                ]}
+                            />
+                        ))}
+                    </View>
+                </View>
+                {/* Fim do Carrossel */}
+                
+                {/* Grid de 4 imagens (2x2) */}
+                <View style={styles.gridContainer}>
+                    <View style={styles.gridRow}>
+                        <TouchableOpacity 
+                            style={styles.gridItem}
+                            activeOpacity={0.9}
+                            onPress={() => console.log('Imagem 1 clicada')}
+                        >
+                            <Image
+                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-smartphones-1-64420d1be7b3a.png&w=1200&q=75' }}
+                                style={styles.gridImage}
+                                resizeMode="cover"
+                            />
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity 
+                            style={styles.gridItem}
+                            activeOpacity={0.9}
+                            onPress={() => console.log('Imagem 2 clicada')}
+                        >
+                            <Image
+                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-eletrodomesticos-1-64420d1de3e76.png&w=1200&q=75' }}
+                                style={styles.gridImage}
+                                resizeMode="cover"
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    
+                    <View style={styles.gridRow}>
+                        <TouchableOpacity 
+                            style={styles.gridItem}
+                            activeOpacity={0.9}
+                            onPress={() => console.log('Imagem 3 clicada')}
+                        >
+                            <Image
+                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-tvs-1-64420d1d99983.png&w=1200&q=75' }}
+                                style={styles.gridImage}
+                                resizeMode="cover"
+                            />
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity 
+                            style={styles.gridItem}
+                            activeOpacity={0.9}
+                            onPress={() => console.log('Imagem 4 clicada')}
+                        >
+                            <Image
+                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-moveis-1-64420d1de56bd.png&w=1200&q=75' }}
+                                style={styles.gridImage}
+                                resizeMode="cover"
+                            />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                <View style={styles.carouselContainer}>
+                    <FlatList
+                        data={carouselImages}
+                        renderItem={renderCarouselItem}
+                        keyExtractor={(item) => `second-${item.id}`}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        pagingEnabled={false}
+                        decelerationRate="fast"
+                        snapToInterval={Dimensions.get('window').width * 0.98 + 10}
+                        snapToAlignment="center"
+                        contentContainerStyle={styles.carouselList}
+                        nestedScrollEnabled={true}
+                    />
+                    <View style={styles.paginationContainer}>
+                        {carouselImages.map((_, index) => (
+                            <View
+                                key={`second-dot-${index}`}
+                                style={[
+                                    styles.paginationDot,
+                                    index === activeIndex ? styles.paginationDotActive : null
+                                ]}
+                            />
+                        ))}
+                    </View>
+                </View>
+                
+                {/* Adicionando espaço no final do scroll para melhor experiência */}
+                <View style={{ height: 20 }} />
+            </ScrollView>
         </SafeAreaView>
     );
 }
@@ -165,7 +261,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 8,
         elevation: 0,
-        backgroundColor: '#ffff',  // Alterando para branco para melhor visualização
+        backgroundColor: '#fff',  // Alterando para branco para melhor visualização
         alignItems: 'center',
         justifyContent: 'center',
     
@@ -196,5 +292,31 @@ const styles = StyleSheet.create({
         backgroundColor: '#E60014',
         width: 12,
         height: 8,
+    },
+    
+    // Estilos para o grid de 4 imagens
+    gridContainer: {
+        padding: 8,
+        marginBottom: 20,
+    },
+    gridRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 10,
+    },
+    gridItem: {
+        width: '48%',
+        height: Math.round(Dimensions.get('window').width * 0.25),
+        borderRadius: 8,
+        overflow: 'hidden',
+        backgroundColor: '#f9f9f9',
+    },
+    gridImage: {
+        width: '100%',
+        height: '100%',
+    },
+    scrollViewContent: {
+        flexGrow: 1,
+        paddingBottom: 20,
     },
 });
