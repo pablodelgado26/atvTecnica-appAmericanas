@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { View, TextInput, StyleSheet, SafeAreaView, Image, Dimensions, FlatList, TouchableOpacity, Text, ScrollView } from 'react-native';
+import { View, TextInput, StyleSheet, SafeAreaView, Image, Dimensions, FlatList, TouchableOpacity, Text, ScrollView, StatusBar, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
 
 export default function Home() {
      
@@ -48,6 +49,9 @@ export default function Home() {
 
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor="#E60014" barStyle="light-content" />
+            
+            {/* Barra de pesquisa fixa */}
             <View style={styles.searchBarContainer}>
                 <View style={styles.searchBar}>
                     <Ionicons name="search" size={22} color="#888" style={styles.icon} />
@@ -59,6 +63,7 @@ export default function Home() {
                 </View>
             </View>
             
+            {/* Conteúdo rolável */}
             <ScrollView 
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.scrollViewContent}
@@ -190,6 +195,67 @@ export default function Home() {
                             />
                         ))}
                     </View>
+                     <View style={styles.imageContainer}>
+                    <Image
+                        source={{
+                            uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F7ae60482-ee28-4dce-ba6d-0f1382158f22___6ed500bdbee14a722279c3b22446d1b3.png&w=1440&q=90',
+                        }}
+                        style={{
+                            width: Dimensions.get('window').width * 0.99,
+                            height: Dimensions.get('window').width * 0.10,
+                            borderRadius: 0,
+                        }}
+                        resizeMode="cover"
+                    />
+                </View>
+
+                <View style={{ marginTop: 24 }}>
+                    <FlatList
+                        data={[
+                            { id: '1', name: 'telefonia', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F5d40f415-b7b4-4c99-8ed6-8390c7875321___2cbb36cc8c96eb67b5248559c5773a19.png&w=320&q=75' },
+                            { id: '2', name: 'beleza e perfumaria', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Ffd00f66f-bf1e-421d-81dd-0d6e2f6cec98___8459b90fbc72dbeb9b331370038424d7.png&w=320&q=75' },
+                            { id: '3', name: 'eletrodomésticos', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fed70eaa0-e7cc-432d-9054-62f98fe18fe3___a9f4c0f2cfe82477cf113ec9e91f6b30.png&w=320&q=75' },
+                            { id: '4', name: 'móveis', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fce101dd9-6319-4613-bae7-61fa5792c04a___9fe401358fb4f1499eabd70a3a879c16.png&w=320&q=75' },
+                            { id: '5', name: 'Produto 5', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F8eb3140d-1c4e-46a1-93a9-e299d462bafd___35ba76e0cae65433520cbf7022948ab9.png&w=320&q=75' },
+                            { id: '6', name: 'Produto 6', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F10db7df7-a883-412e-89e6-3e04ee250c4e___88dea4382818262b4ea1e04918c766d0.png&w=320&q=75' },
+                            { id: '7', name: 'Produto 7', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F91b6c4fe-4c97-4a52-a753-3675214f0d54___232944916c517c32702cdd519f2d76ff.png&w=320&q=75' },
+                        ]}
+                        keyExtractor={item => item.id}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={{ paddingHorizontal: 12 }}
+                        renderItem={({ item }) => (
+                            <View style={{ alignItems: 'center', marginHorizontal: 10 }}>
+                                <View
+                                    style={{
+                                        width: 60,
+                                        height: 60,
+                                        borderRadius: 30,
+                                        backgroundColor: '#fff',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        elevation: 2,
+                                        shadowColor: '#000',
+                                        shadowOpacity: 0.1,
+                                        shadowRadius: 4,
+                                        shadowOffset: { width: 0, height: 2 },
+                                        marginBottom: 6,
+                                    }}
+                                >
+                                    <Image
+                                        source={{ uri: item.img }}
+                                        style={{ width: 48, height: 48, borderRadius: 24 }}
+                                        resizeMode="cover"
+                                    />
+                                </View>
+                                <Text style={{ fontSize: 12, color: '#333', textAlign: 'center', maxWidth: 70 }}>
+                                    {item.name}
+                                </Text>
+                            </View>
+                        )}
+                    />
+                </View>
+
                 </View>
                 
                 {/* Adicionando espaço no final do scroll para melhor experiência */}
@@ -206,9 +272,10 @@ const styles = StyleSheet.create({
     },
     searchBarContainer: {
         backgroundColor: '#E60014',
-        paddingTop: 40,
+        paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 10,
         paddingBottom: 16,
         paddingHorizontal: '5%',
+      
     },
     searchBar: {
         flexDirection: 'row',
@@ -318,5 +385,6 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         flexGrow: 1,
         paddingBottom: 20,
+      
     },
 });
