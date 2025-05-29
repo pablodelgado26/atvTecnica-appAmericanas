@@ -22,10 +22,10 @@ export default function FavoriteScreen() {
             </View>
 
             <View style={styles.pressable}>
-            <Pressable style={{ backgroundColor: '#EE0000', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center' }}>
+            <Pressable style={{ backgroundColor: '#ed2939', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{ color: '#FFF', fontWeight: '500' }}>Cadastrar conta</Text>
             </Pressable>
-            <Pressable style={{ backgroundColor: '#F8f8ff', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
+            <Pressable style={{ backgroundColor: '#22222', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
                 <Text style={{ color: '#EE0000', fontWeight: '500' }}>Entrar com e-mail</Text>
             </Pressable>
             </View>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     text: {
         paddingTop: 20,
         fontWeight: '500',
-        width: 200,
+        width: 180,
         justifyContent: 'center',
         textAlign: 'center',
     },
