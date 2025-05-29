@@ -8,16 +8,16 @@ export default function Home() {
     
     // Array com as imagens do carrossel
     const carouselImages = [
-        { id: '1', uri: 'https://images-americanas.b2w.io/produtos/01/00/img/5211704/2/5211704228_1GG.jpg' },
-        { id: '2', uri: 'https://images-americanas.b2w.io/produtos/4612327940/imagens/smartphone-samsung-galaxy-a05s-preto-6-7-128gb-4gb/4612327940_1_large.jpg' },
-        { id: '3', uri: 'https://images-americanas.b2w.io/produtos/5972670621/imagens/smart-tv-50-led-tcl-4k-uhd-hdr-com-google-tv-50p735/5972670621_1_large.jpg' },
-        { id: '4', uri: 'https://images-americanas.b2w.io/produtos/6467371129/imagens/iphone-14-128gb-preto-5g-tela-de-6-1-camera-dupla-12mp/6467371129_1_large.jpg' },
-        { id: '5', uri: 'https://images-americanas.b2w.io/produtos/01/00/img/5211704/2/5211704228_1GG.jpg' },
-        { id: '6', uri: 'https://images-americanas.b2w.io/produtos/5243759429/imagens/ar-condicionado-split-hw-inverter-electrolux-eco-turbo-12000-btus-frio-vi12f-vj12f/5243759429_1_large.jpg' },
-        { id: '7', uri: 'https://images-americanas.b2w.io/produtos/3579765104/imagens/notebook-lenovo-intel-core-i5-8gb-256gb-ssd-tela-15-6-windows-11-ideapad-3i-82bs0005br/3579765104_1_large.jpg' },
-        { id: '8', uri: 'https://images-americanas.b2w.io/produtos/4611892033/imagens/bicicleta-aro-29-mountain-bike-freio-a-disco-21-marchas-suspensao/4611892033_1_large.jpg' },
-        { id: '9', uri: 'https://images-americanas.b2w.io/produtos/5516321514/imagens/maquina-de-lavar-11kg-brastemp-bwk12-frontal-com-ciclo-tira-manchas-power/5516321514_1_large.jpg' },
-        { id: '10', uri: 'https://images-americanas.b2w.io/produtos/3092082804/imagens/fone-de-ouvido-bluetooth-jbl-tune-510bt-pure-bass-com-microfone-preto/3092082804_1_large.jpg' },
+        { id: '1', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Feef78a39-8030-4306-a0f9-8588d8b7a53a___63aba633b26c6ad22f38c2d10ab73555.png&w=1440&q=75' },
+        { id: '2', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F7891142e-5ae1-4bff-9f45-68df37e16695___89f6771e02bd270ab9c6f1f8549d17f1.png&w=1440&q=75' },
+        { id: '3', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F733d26ca-b670-438d-a70f-1d985a6f7a22___28d73c85cedb824f8d7a9c03dd3ba80b.png&w=1440&q=75' },
+        { id: '4', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F6063b901-c1b1-49e9-9aa8-aa45e3919ec4___79e4d1f22295ed789b434490512e1187.png&w=1440&q=75' },
+        { id: '5', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F2c5c1c03-1ae5-4c58-a8ea-5e5b3bd42b54___f86ec2260632d2ae6069b4d58cf94480.png&w=1440&q=75' },
+        { id: '6', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fb86cb464-da32-435c-a4f0-107e55feaa0e___77c686cebb8c1ae13a000479a3ab2bf2.png&w=1440&q=75' },
+        { id: '7', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F62dab3ce-17be-45a9-a5f1-3494f2938fbc___b864b3c4308fc0eb78bce340a8daeb6a.png&w=1440&q=75' },
+        { id: '8', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F8869e077-094f-4998-8c4e-23b60c347cf5___2512060f194afcfa9ab42b382ec6d0a8.png&w=1440&q=75' },
+        { id: '9', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fe5b85d12-78c9-43d1-8524-6b5c874f9725___7cec30b3f572c1f30e8b8bf8e799df14.png&w=1440&q=75' },
+        { id: '10', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F4996bdb4-d5d0-4503-9745-e284b0eb04e8___ebff366a6e4fedc668ffd5065d152a4b.png&w=1440&q=75' },
     ];
 
     // Função para renderizar cada item do carrossel
@@ -31,7 +31,7 @@ export default function Home() {
                     <Image
                         source={{ uri: item.uri }}
                         style={styles.carouselImage}
-                        resizeMode="cover"
+                        resizeMode="cover"  // Alterando para "cover" para preencher todo o espaço
                     />
                 </View>
             </TouchableOpacity>
@@ -57,7 +57,7 @@ export default function Home() {
                     />
                 </View>
             </View>
-            <View style={{ height: 16 }} />
+            <View style={{ height: 10 }} />
             <View style={styles.imageContainer}>
                 <Image
                     source={{
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         marginTop: 16,
     },
     bannerImage: {
-        width: '100%',
+        width: Dimensions.get('window').width,
         height: 140,
         borderRadius: 0,
     },
@@ -154,33 +154,36 @@ const styles = StyleSheet.create({
         marginBottom: 12,
         color: '#333',
     },
-    carouselList: {
-        paddingLeft: 10,
-        paddingRight: 10,
-    },
+    
     carouselItemContainer: {
-        width: Dimensions.get('window').width * 0.8,
-        height: 200,
-        marginHorizontal: 5,
+        width: Math.round(Dimensions.get('window').width * 0.99), // aumente aqui para 92% da largura da tela
+        height: Math.round(Dimensions.get('window').width * 0.3),
+        marginHorizontal: 10, // diminua a margem para caber mais na tela
         borderRadius: 12,
         overflow: 'hidden',
-        shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 8,
-        elevation: 5,
-        backgroundColor: '#fff',
+        elevation: 0,
+        backgroundColor: '#ffff',  // Alterando para branco para melhor visualização
+        alignItems: 'center',
+        justifyContent: 'center',
+    
+        
     },
     carouselImage: {
-        width: '100%',
-        height: '100%',
+        width: '100%',  // Agora a imagem ocupa 100% da largura do container
+        height: '86%',  // Agora a imagem ocupa 100% da altura do container
         borderRadius: 12,
+        marginTop: 20,
+        height: '90%',
     },
     paginationContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 15,
+        
     },
     paginationDot: {
         width: 8,
