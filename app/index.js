@@ -5,12 +5,12 @@ import Constants from 'expo-constants';
 
 
 export default function Home() {
-     
+
     const [activeIndex, setActiveIndex] = useState(0);
     const flatListRef = useRef(null);
-    
-    
-    
+
+
+
     // Array com as imagens do carrossel
     const carouselImages = [
         { id: '1', uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Feef78a39-8030-4306-a0f9-8588d8b7a53a___63aba633b26c6ad22f38c2d10ab73555.png&w=1440&q=75' },
@@ -28,7 +28,7 @@ export default function Home() {
     // Função para renderizar cada item do carrossel
     const renderCarouselItem = ({ item, index }) => {
         return (
-            <TouchableOpacity 
+            <TouchableOpacity
                 activeOpacity={0.9}
                 onPress={() => console.log(`Imagem ${index + 1} clicada`)}
             >
@@ -52,8 +52,8 @@ export default function Home() {
 
     return (
         <SafeAreaView style={styles.container}>
-           <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
-            
+            <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
+
             {/* Barra de pesquisa fixa */}
             <View style={styles.searchBarContainer}>
                 <View style={styles.searchBar}>
@@ -65,9 +65,9 @@ export default function Home() {
                     />
                 </View>
             </View>
-            
+
             {/* Conteúdo rolável */}
-            <ScrollView 
+            <ScrollView
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.scrollViewContent}
             >
@@ -85,7 +85,7 @@ export default function Home() {
                         resizeMode="cover"
                     />
                 </View>
-                
+
                 {/* Início do Carrossel */}
                 <View style={styles.carouselContainer}>
                     <Text style={styles.carouselTitle}></Text>
@@ -117,57 +117,69 @@ export default function Home() {
                     </View>
                 </View>
                 {/* Fim do Carrossel */}
-                
+
                 {/* Grid de 4 imagens (2x2) */}
                 <View style={styles.gridContainer}>
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 1 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-smartphones-1-64420d1be7b3a.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/entrega .png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 2 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-eletrodomesticos-1-64420d1de3e76.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/leve mais.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
-                    
+
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 3 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-tvs-1-64420d1d99983.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/frete gratis.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 4 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-moveis-1-64420d1de56bd.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/entrega rapida.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
@@ -198,262 +210,298 @@ export default function Home() {
                             />
                         ))}
                     </View>
-                    
-                     {/* imagem  de oferta , do dia  */}
-                     <View style={styles.imageContainer}>
-                    <Image
-                        source={{
-                            uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F7ae60482-ee28-4dce-ba6d-0f1382158f22___6ed500bdbee14a722279c3b22446d1b3.png&w=1440&q=90',
-                        }}
-                        style={{
-                            width: Dimensions.get('window').width * 0.99,
-                            height: Dimensions.get('window').width * 0.10,
-                            borderRadius: 0,
-                        }}
-                        resizeMode="cover"
-                    />
-                </View>
 
-                <View style={{ marginTop: 24 }}>
-                    <FlatList
-                        data={[
-                            { id: '1', name: 'telefonia', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F5d40f415-b7b4-4c99-8ed6-8390c7875321___2cbb36cc8c96eb67b5248559c5773a19.png&w=320&q=75' },
-                            { id: '2', name: 'beleza e perfumaria', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Ffd00f66f-bf1e-421d-81dd-0d6e2f6cec98___8459b90fbc72dbeb9b331370038424d7.png&w=320&q=75' },
-                            { id: '3', name: 'eletrodomésticos', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fed70eaa0-e7cc-432d-9054-62f98fe18fe3___a9f4c0f2cfe82477cf113ec9e91f6b30.png&w=320&q=75' },
-                            { id: '4', name: 'móveis', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fce101dd9-6319-4613-bae7-61fa5792c04a___9fe401358fb4f1499eabd70a3a879c16.png&w=320&q=75' },
-                            { id: '5', name: 'eletroportateis', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F8eb3140d-1c4e-46a1-93a9-e299d462bafd___35ba76e0cae65433520cbf7022948ab9.png&w=320&q=75' },
-                            { id: '6', name: 'utilidades domésticas', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F10db7df7-a883-412e-89e6-3e04ee250c4e___88dea4382818262b4ea1e04918c766d0.png&w=320&q=75' },
-                            { id: '7', name: 'brinquedos', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F91b6c4fe-4c97-4a52-a753-3675214f0d54___232944916c517c32702cdd519f2d76ff.png&w=320&q=75' },
-                        ]}
-                        keyExtractor={item => item.id}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={{ paddingHorizontal: 12 }}
-                        renderItem={({ item }) => (
-                            <View style={{ alignItems: 'center', marginHorizontal: 10 }}>
-                                <View
-                                    style={{
-                                        width: 60,
-                                        height: 60,
-                                        borderRadius: 30,
-                                        backgroundColor: '#fff',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        elevation: 2,
-                                        shadowColor: '#000',
-                                        shadowOpacity: 0.1,
-                                        shadowRadius: 4,
-                                        shadowOffset: { width: 0, height: 2 },
-                                        marginBottom: 6,
-                                    }}
-                                >
-                                    <Image
-                                        source={{ uri: item.img }}
-                                        style={{ width: 48, height: 48, borderRadius: 24 }}
-                                        resizeMode="cover"
-                                    />
+                    {/* imagem  de  entrega  */}
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={require('./IMG/americanassss.png')}
+                            style={{
+                                width: Dimensions.get('window').width * 0.99,
+                                height: Dimensions.get('window').width * 0.10,
+                                borderRadius: 0,
+                            }}
+                            resizeMode="cover"
+                        />
+                    </View>
+
+                    <View style={{ marginTop: 24 }}>
+                        <FlatList
+                            data={[
+                                { id: '1', name: 'telefonia', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F5d40f415-b7b4-4c99-8ed6-8390c7875321___2cbb36cc8c96eb67b5248559c5773a19.png&w=320&q=75' },
+                                { id: '2', name: 'beleza e perfumaria', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Ffd00f66f-bf1e-421d-81dd-0d6e2f6cec98___8459b90fbc72dbeb9b331370038424d7.png&w=320&q=75' },
+                                { id: '3', name: 'eletrodomésticos', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fed70eaa0-e7cc-432d-9054-62f98fe18fe3___a9f4c0f2cfe82477cf113ec9e91f6b30.png&w=320&q=75' },
+                                { id: '4', name: 'móveis', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2Fce101dd9-6319-4613-bae7-61fa5792c04a___9fe401358fb4f1499eabd70a3a879c16.png&w=320&q=75' },
+                                { id: '5', name: 'eletroportateis', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F8eb3140d-1c4e-46a1-93a9-e299d462bafd___35ba76e0cae65433520cbf7022948ab9.png&w=320&q=75' },
+                                { id: '6', name: 'utilidades domésticas', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F10db7df7-a883-412e-89e6-3e04ee250c4e___88dea4382818262b4ea1e04918c766d0.png&w=320&q=75' },
+                                { id: '7', name: 'brinquedos', img: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F91b6c4fe-4c97-4a52-a753-3675214f0d54___232944916c517c32702cdd519f2d76ff.png&w=320&q=75' },
+                            ]}
+                            keyExtractor={item => item.id}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={{ paddingHorizontal: 12 }}
+                            renderItem={({ item }) => (
+                                <View style={{ alignItems: 'center', marginHorizontal: 10 }}>
+                                    <View
+                                        style={{
+                                            width: 60,
+                                            height: 60,
+                                            borderRadius: 30,
+                                            backgroundColor: '#fff',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            elevation: 2,
+                                            shadowColor: '#000',
+                                            shadowOpacity: 0.1,
+                                            shadowRadius: 4,
+                                            shadowOffset: { width: 0, height: 2 },
+                                            marginBottom: 6,
+                                        }}
+                                    >
+                                        <Image
+                                            source={{ uri: item.img }}
+                                            style={{ width: 48, height: 48, borderRadius: 24 }}
+                                            resizeMode="cover"
+                                        />
+                                    </View>
+                                    <Text style={{ fontSize: 12, color: '#333', textAlign: 'center', maxWidth: 70 }}>
+                                        {item.name}
+                                    </Text>
                                 </View>
-                                <Text style={{ fontSize: 12, color: '#333', textAlign: 'center', maxWidth: 70 }}>
-                                    {item.name}
-                                </Text>
-                            </View>
-                        )}
-                    />
-                </View>
-                 <View style={styles.gridContainer}>
+                            )}
+                        />
+                    </View>
+                   {/* Grid de 4 imagens (2x2) */}
+                <View style={styles.gridContainer}>
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 1 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-smartphones-1-64420d1be7b3a.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/desconto.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 2 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-eletrodomesticos-1-64420d1de3e76.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/99.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
-                    
+
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 3 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-tvs-1-64420d1d99983.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/peças.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 4 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-moveis-1-64420d1de56bd.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/frete.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
                 </View>
 
-                  <View style={styles.gridContainer}>
+                    {/* Grid de 4 imagens (2x2) */}
+                <View style={styles.gridContainer}>
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 1 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-smartphones-1-64420d1be7b3a.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/hoje1.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 2 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-eletrodomesticos-1-64420d1de3e76.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/hoje2.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
-                    
+
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 3 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-tvs-1-64420d1d99983.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/hoje3.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 4 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-moveis-1-64420d1de56bd.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/hoje4.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
-
                 </View>
-                               <View style={styles.imageContainer}>
-                    <Image
-                        source={{
-                            uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F7ae60482-ee28-4dce-ba6d-0f1382158f22___6ed500bdbee14a722279c3b22446d1b3.png&w=1440&q=90',
-                        }}
-                        style={{
-                            width: Dimensions.get('window').width * 0.99,
-                            height: Dimensions.get('window').width * 0.30,
-                            borderRadius: 0,
-                        }}
-                        resizeMode="cover"
-                    />
-                </View>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={{
+                                uri: 'https://tpc.googlesyndication.com/simgad/17610912163447092268?',
+                            }}
+                            style={{
+                                width: Dimensions.get('window').width * 0.99,
+                                height: Dimensions.get('window').width * 0.11,
+                                borderRadius: 0,
+                            }}
+                            resizeMode="cover"
+                        />
+                    </View>
 
-                   <View style={styles.imageContainer}>
-                    <Image
-                        source={{
-                            uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Fassets%2Fvtex.file-manager-graphql%2Fimages%2F7ae60482-ee28-4dce-ba6d-0f1382158f22___6ed500bdbee14a722279c3b22446d1b3.png&w=1440&q=90',
-                        }}
-                        style={{
-                            width: Dimensions.get('window').width * 0.99,
-                            height: Dimensions.get('window').width * 0.30,
-                            borderRadius: 0,
-                        }}
-                        resizeMode="cover"
-                    />
-                </View>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={{
+                                uri: 'https://tpc.googlesyndication.com/simgad/932774562636342284?',
+                            }}
+                            style={{
+                                width: Dimensions.get('window').width * 0.99,
+                                height: Dimensions.get('window').width * 0.11,
+                                borderRadius: 0,
+                            }}
+                            resizeMode="cover"
+                        />
+                    </View>
 
-                         <View style={styles.gridContainer}>
+                   {/* Grid de 4 imagens (2x2) */}
+                <View style={styles.gridContainer}>
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 1 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-smartphones-1-64420d1be7b3a.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/cliente1.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 2 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-eletrodomesticos-1-64420d1de3e76.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/cliente2.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
-                    
+
                     <View style={styles.gridRow}>
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 3 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-tvs-1-64420d1d99983.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/cliente3.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity 
-                            style={styles.gridItem}
+
+                        <TouchableOpacity
+                            style={[styles.gridItem, { height: Dimensions.get('window').width * 0.4 }]}
                             activeOpacity={0.9}
                             onPress={() => console.log('Imagem 4 clicada')}
                         >
                             <Image
-                                source={{ uri: 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Fimages-americanas.b2w.io%2Fspacey%2F2023%2F05%2F22%2Flanding-1200x300-moveis-1-64420d1de56bd.png&w=1200&q=75' }}
-                                style={styles.gridImage}
-                                resizeMode="cover"
+                                source={require('./IMG/cliente4.png')}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    resizeMode: 'contain'
+                                }}
                             />
                         </TouchableOpacity>
                     </View>
                 </View>
 
-                
+
 
                 </View>
-                
+
                 {/* Adicionando espaço no final do scroll para melhor experiência */}
                 <View style={{ height: 20 }} />
             </ScrollView>
@@ -471,7 +519,7 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 10,
         paddingBottom: 16,
         paddingHorizontal: '5%',
-      
+
     },
     searchBar: {
         flexDirection: 'row',
@@ -513,7 +561,7 @@ const styles = StyleSheet.create({
         marginBottom: 12,
         color: '#333',
     },
-    
+
     carouselItemContainer: {
         width: Math.round(Dimensions.get('window').width * 0.99), // aumente aqui para 92% da largura da tela
         height: Math.round(Dimensions.get('window').width * 0.3),
@@ -527,8 +575,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',  // Alterando para branco para melhor visualização
         alignItems: 'center',
         justifyContent: 'center',
-    
-        
+
+
     },
     carouselImage: {
         width: '100%',  // Agora a imagem ocupa 100% da largura do container
@@ -542,7 +590,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 15,
-        
+
     },
     paginationDot: {
         width: 8,
@@ -556,23 +604,28 @@ const styles = StyleSheet.create({
         width: 12,
         height: 8,
     },
-    
+
     // Estilos para o grid de 4 imagens
     gridContainer: {
-        padding: 8,
-        marginBottom: 20,
+        padding: 12,
+        marginBottom: 24,
+        marginTop: 12,
     },
     gridRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 10,
+        marginBottom: 16,
     },
     gridItem: {
         width: '48%',
-        height: Math.round(Dimensions.get('window').width * 0.25),
         borderRadius: 8,
         overflow: 'hidden',
         backgroundColor: '#f9f9f9',
+        elevation: 2,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
     },
     gridImage: {
         width: '100%',
@@ -581,6 +634,6 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         flexGrow: 1,
         paddingBottom: 20,
-      
+
     },
 });
