@@ -29,7 +29,7 @@ export default function FavoriteScreen() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '94%',
+        height: '93%',
         alignItems: 'center',
         textAlign: 'center',
         display: 'flex',
