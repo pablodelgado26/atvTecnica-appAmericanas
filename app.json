@@ -5,11 +5,11 @@
     "name": "appAmericanas",
     "slug": "appAmericanas",
     "version": "1.0.0",
-    "icon": "./ssets/icon.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#f80132"
     },
